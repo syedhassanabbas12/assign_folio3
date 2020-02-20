@@ -1,0 +1,66 @@
+#body{
+    background-color: skyblue;
+    text-align: center;
+}
+#title{
+    color: white;
+}
+#instruction1{
+    color: orange;
+}
+#instruction2{
+    color: green;
+}
+#instruction3{
+    color: blue;
+}
+#btn{
+  /* margin-right: -20%; */
+  margin-left: 50%;
+}
+
+
+
+
+
+
+  /* [draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+  } */
+  
+  #list {
+    list-style-type: none;
+  }
+  
+  .column {
+    /* width: 162px; */
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: center;
+    cursor: move;
+  }
+  .column header {
+    height: 20px;
+    /* width: 150px; */
+    color: black;
+    background-color: #ccc;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px;
+    border: 2px solid #666666;
+  }
+  
+  .column.dragElem {
+    opacity: 0.4;
+  }
+  .column.over {
+    border: 2px dashed #000;
+    border-top: 2px solid blue;
+  }
+  

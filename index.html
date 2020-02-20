@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+
+<body id="body">
+
+    <h1 id="title">WORK TO-DOS</h1>
+    <P id="instruction1">Enter text into the input field to add items into the list(max. 28 characters).</P>
+    <p id="instruction2">Click the item to mark it as complete.</p>
+    <p id="instruction3">Click the "X" to remove the item from your list.</p>
+
+    <div>
+        <input type="text" id="inputField" minlength="4" maxlength="28">
+        <button onclick="addItem()">Add</button>
+    </div>
+
+
+    <ul class="list-group columns" id="list">
+        <!-- <li class="list-group-item column" id="item1" draggable="true">New <button id="btn" onclick="removeItem(this)">x</button></li>
+        <li class="list-group-item column" id="item2" draggable="true">Deleted <button id="btn" onclick="removeItem(this)">x</button></li>
+        <li class="list-group-item column" id="item3" draggable="true">Warnings<button id="btn" onclick="removeItem(this)">x</button></li> -->
+    </ul>
+
+</body>
+<script src="./script.js"></script>
+<!-- <script src="./Sortable/Sortable.js"></script> -->
+
+</html>
