@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="styles.css"> 
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body id="body">
@@ -24,15 +24,19 @@
         <button onclick="addItem()">Add</button>
     </div>
 
+    <div class="row-md-12" id="myRow">
+        <div class="column" id="col1">
+            <h3>Pending</h3>
+            <ul class="list-group columns" id="list"></ul>
+        </div>
+        <div class="column2" id="col2">
+            <h3>Done</h3>
+            <ul class="list-group columns" id="list2"></ul>
+        </div>
+    </div>
 
-    <ul class="list-group columns" id="list">
-        <!-- <li class="list-group-item column" id="item1" draggable="true">New <button id="btn" onclick="removeItem(this)">x</button></li>
-        <li class="list-group-item column" id="item2" draggable="true">Deleted <button id="btn" onclick="removeItem(this)">x</button></li>
-        <li class="list-group-item column" id="item3" draggable="true">Warnings<button id="btn" onclick="removeItem(this)">x</button></li> -->
-    </ul>
 
 </body>
 <script src="./script.js"></script>
-<!-- <script src="./Sortable/Sortable.js"></script> -->
 
 </html>
