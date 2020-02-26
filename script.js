@@ -7,17 +7,15 @@ for (let i = 0; i < listSelector.length; i++) {
 }
 
 function addItem() {
-    // console.log("addItem()");
-    var list = document.getElementById("list");
-    // var list2 = document.getElementById("list2");
-    var inputText = document.getElementById("inputField").value
+    let list = document.getElementById("list");
+    const inputText = document.getElementById("inputField").value
     
     if (!inputText) { // If input is empty
         alert("Can not add empty To-Do(s)");
         return;
     } else { // if input is already in the list
-        var listItems = document.getElementById("list").childNodes;
-        for (var i = 0; i < listItems.length; i++) {
+        const listItems = document.getElementById("list").childNodes;
+        for (let i = 0; i < listItems.length; i++) {
             if (inputText == listItems[i].childNodes[1].data) {
                 alert("To-do Already Exist!");
                 return;
@@ -25,7 +23,7 @@ function addItem() {
         }
     }
     //creating new todo
-    var tag = document.createElement("li");
+    let tag = document.createElement("li");
     tag.setAttribute('draggable', 'true');
     tag.setAttribute('id', Math.random());
     tag.className = "list-group-item column";
@@ -36,26 +34,23 @@ function addItem() {
     '<p id="status">pending</p>';
     list.appendChild(tag);
     document.getElementById("inputField").value = "";
-    var cols = document.querySelectorAll('#list .column');
+    let cols = document.querySelectorAll('#list .column');
     [].forEach.call(cols, addDnDHandlers);
 }
 
 function editMe(me) {
-    // console.log("editMe()");
-    var todo = prompt("Edit this To-Do:", me.parentNode.childNodes[1].data);
-    var oldCheck = me.childNodes[0].checked;
+    const todo = prompt("Edit this To-Do:", me.parentNode.childNodes[1].data);
     if (todo == null || todo == "") {
         alert("Can not add empty To-Do(s)");
         return;
     } else {
-        var list = document.getElementById("list").childNodes;
-        for (var i = 0; i < list.length; i++) {
+        const list = document.getElementById("list").childNodes;
+        for (let i = 0; i < list.length; i++) {
             if (todo == list[i].childNodes[1].data) {
                 alert("To-do Already Exist!");
                 return;
             }
         }
-        // list[0].childNodes[1].data = todo;
         txt = '<input type="checkbox" name="category" value="One" onclick="selectTodo(this)">' + todo +
             '<button id="btn" onclick="removeItem(this)">x</button>' + '<button id="btnEdit" onclick="editMe(this)">Edit</button>' +
             '<label class="switch" onclick="statusChange(this)"><input type="checkbox"><span class="slider round"></span></label>' +
@@ -65,9 +60,8 @@ function editMe(me) {
 }
 
 function removeItem(me) {
-    // console.log("removeItem()");
     if (tabs.length) {
-        for (var i = tabs.length - 1; i >= 0; i--) {
+        for (let i = tabs.length - 1; i >= 0; i--) {
             document.getElementById("list").removeChild(tabs[i]);
             tabs.pop();
         }
@@ -86,26 +80,13 @@ function selectTodo(me) {
 }
 
 function statusChange(me) {
-    // console.log('statusChange()', me.parentNode.childNodes[5].innerHTML);
-    var status = me.childNodes[0].checked;
+    const status = me.childNodes[0].checked;
     if (status) {
         me.parentNode.classList.toggle('columnPending');
         me.parentNode.childNodes[5].innerHTML = "Done";
         console.log(me.parentNode.childNodes);
-
-        // var tag = document.createElement("li");
-        // tag.setAttribute('draggable', 'true');
-        // tag.setAttribute('id', Math.random());
-        // tag.className = "list-group-item column";
-        // tag.innerHTML = '<input type="checkbox" name="category" value="One" onclick="selectTodoDone(this)">' +
-        //     'me.parentNode.childNodes[1].data' +
-        //     '<button id="btn" onclick="removeItemDone(this)">x</button>' +
-        //     '<button id="btnEdit" onclick="editMeDone(this)">Edit</button>' +
-        //     '<label class="switch" onclick="statusChange(this)"><input type="checkbox"><span class="slider round"></span></label>' +
-        //     '<p id="status">Done</p>';
-
         document.getElementById("list2").appendChild(me.parentNode);
-        var cols = document.querySelectorAll('#list2 .column2');
+        let cols = document.querySelectorAll('#list2 .column2');
         [].forEach.call(cols, addDnDHandlers);
         removeItem(me);
     } else {
@@ -119,12 +100,7 @@ function statusChange(me) {
 
 
 
-
-
-
-
-
-var dragSrcEl = null;
+let dragSrcEl = null;
 
 function handleDragStart(e) {
     // Target (this) element is the source node.
@@ -165,13 +141,10 @@ function handleDrop(e) {
     // Don't do anything if dropping the same column we're dragging.
     if (dragSrcEl != this) {
         // Set the source column's HTML to the HTML of the column we dropped on.
-        //alert(this.outerHTML);
-        //dragSrcEl.innerHTML = this.innerHTML;
-        //this.innerHTML = e.dataTransfer.getData('text/html');
         this.parentNode.removeChild(dragSrcEl);
-        var dropHTML = e.dataTransfer.getData('text/html');
+        let dropHTML = e.dataTransfer.getData('text/html');
         this.insertAdjacentHTML('beforebegin', dropHTML);
-        var dropElem = this.previousSibling;
+        let dropElem = this.previousSibling;
         addDnDHandlers(dropElem);
 
     }
@@ -182,10 +155,6 @@ function handleDrop(e) {
 function handleDragEnd(e) {
     // this/e.target is the source node.
     this.classList.remove('over');
-
-    /*[].forEach.call(cols, function (col) {
-      col.classList.remove('over');
-    });*/
 }
 
 function addDnDHandlers(elem) {
@@ -198,5 +167,5 @@ function addDnDHandlers(elem) {
 
 }
 
-var cols = document.querySelectorAll('#list .column');
+let cols = document.querySelectorAll('#list .column');
 [].forEach.call(cols, addDnDHandlers);
